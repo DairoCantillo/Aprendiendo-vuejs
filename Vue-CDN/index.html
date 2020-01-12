@@ -11,12 +11,18 @@
 <body>
     <div id="app">
         <h1>{{titulo}}</h1>
+        <input type="text"v-model="nuevoLibro" @keyup.enter="agregarLibro">
+        <button @click="agregarLibro">Agregar</button>
         <ul>
             <li v-for="libro of libros">
-                {{libro.nombre}} - {{libro.cantidad}}
-                <span v-if="libro.cantidad === 0">Sin Stock</span>
+                <button @click="libro.cantidad++">+</button>
+                <button @click="libro.cantidad--">-</button>
+                <input type="number" v-model.number="libro.cantidad">
+                {{libro.nombre}}
+                <span v-if="libro.cantidad === 0"><strong>Sin Stock</strong></span>
             </li>
         </ul>
+        <h4>Total {{sumarLibros}} </h4>
     </div>
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
