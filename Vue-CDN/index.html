@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hola mundo vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <ul>
+            <li v-for="libro of libros">
+                {{libro.nombre}} - {{libro.cantidad}}
+                <span v-if="libro.cantidad === 0">Sin Stock</span>
+            </li>
+        </ul>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
