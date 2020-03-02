@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Componentes</title>
+</head>
+
+<body>
+    <div id="app">
+        <saludo></saludo>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script>
+        Vue.component('saludo',{
+            template: '<h1>{{saludo}}</h1>',
+            data(){
+                return{
+                    saludo:'hola desde vue'
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
